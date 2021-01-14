@@ -5,5 +5,4 @@ Basic Commands that can work on:
 Open Youtube
 Open google
 Play music
-Open code
 searching using wikipedia

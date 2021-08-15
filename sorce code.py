@@ -22,11 +22,12 @@ def wishMe():
         speak("How may I help you sir!")
 
 def takecommand():
-    r = sr.Recognizer()
+    r = sr.Recognizer() #Speech recognition means that when humans are speaking, a machine understands it. Here we are using Google Speech API
+                        # in Python to make it happen. We need to install the following packages for this − Pyaudio 
     with sr.Microphone()as source:
         print("Listening...")
         r.pause_threshold = 1
-        r.adjust_for_ambient_noise(source)
+        r.adjust_for_ambient_noise(source)  #adjust_for_ambient_noise(source, duration = 1) Adjusts the energy threshold dynamically using audio from source 
         audio = r.listen(source)
     try:
         print("Recognizing...")
@@ -44,7 +45,7 @@ def takecommand():
 if __name__ == "__main__":
     wishMe()
     while True:
-        query = takecommand().lower()
+        query = takecommand().lower()  #lower means here to take query in lower-case alphabets
 
         if 'wikipedia' in query:
             speak("Searching wikipedia")
